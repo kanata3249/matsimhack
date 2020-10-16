@@ -15,7 +15,7 @@ export const summaryOfMaterials = (inventoryNum, myServantdb, Servantdb) => {
       summoned: required[materialId].summonedRequired,
       used: required[materialId].used,
       stock: required[materialId].stock,
-      ascension: required[materialId].requiredForAscension
+      reserved: required[materialId].reserved
     })
   }
   for (let materialId in materialNames2) {
@@ -25,16 +25,16 @@ export const summaryOfMaterials = (inventoryNum, myServantdb, Servantdb) => {
       summoned: required[materialId].summonedRequired,
       used: required[materialId].used,
       stock: required[materialId].stock,
-      ascension: required[materialId].requiredForAscension
+      reserved: required[materialId].reserved
     })
   }
-  let result = "名称\t必要数\t必要数(召喚済み)\t使用済み\t所持\n"
+  let result = "名称\t必要数\t必要数(召喚済み)\t使用済み\t使用予定\t所持\n"
   for (let item of summaryWithName) {
-    result += `${item.name}\t${item.total}\t${item.summoned}\t${item.used}\t${item.stock}\n`
+    result += `${item.name}\t${item.total}\t${item.summoned}\t${item.used}\t${item.reserved}\t${item.stock}\n`
   }
   result += "\n"
   for (let item of summaryWithName2) {
-    result += `${item.name}\t${item.total}\t${item.summoned}\t${item.used}\t${item.stock}\n`
+    result += `${item.name}\t${item.total}\t${item.summoned}\t${item.used}\t${item.reserved}\t${item.stock}\n`
   }
   return result
 }
