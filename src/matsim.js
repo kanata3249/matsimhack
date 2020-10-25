@@ -43,9 +43,9 @@ export const servantsStatistics = (myServantdb, Servantdb) => {
       if (myServantdb[servantId][1] == 4) {
         result.maxAscension++;
       }
-
     }
   }
+  result.total--      // ignore Solomon
   return result
 }
 
