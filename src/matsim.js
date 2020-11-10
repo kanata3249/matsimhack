@@ -63,15 +63,14 @@ export const materialsForSkillMax = (inventoryNum, myServantdb, Servantdb, useAl
     for (let materialId in servantMaterial) {
       if (servantMaterial[materialId].summonedRequired > 0) {
         if (useAllMaterials) {
-          const num = servantMaterial[materialId].requiredForSkill - servantMaterial[materialId].usedForSkill
+          const num = servantMaterial[materialId].requiredForSkill
           if (num > 0) {
             needCheck = true
 
             materialsForSkillMax += Math.max(0, num - materials[materialId].stock)
           }
         } else {
-          const num = servantMaterial[materialId].requiredForSkill
-          - (servantMaterial[materialId].reservedForSkill + servantMaterial[materialId].usedForSkill)
+          const num = servantMaterial[materialId].requiredForSkill - servantMaterial[materialId].reservedForSkill
           if (num > 0) {
             needCheck = true
 
