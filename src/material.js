@@ -9,6 +9,7 @@ export default {
     reservedForAscension: 0,
     reservedForSkill: 0,
     free: 0,
+    freeForSkill: 0,
     requiredForAscension: 0,
     requiredForSkill: 0
 }
